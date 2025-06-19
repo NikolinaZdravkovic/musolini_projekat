@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benito Musolini - Karakteristike ličnosti i uticaj na Drugi svetski rat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            font-style: italic;
+            text-align : center;
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+
+        .tab-button {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .tab-button.active {
+            background: #3498db;
+            color: white;
+        }
+
+        .tab-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin: 30px 0 15px 0;
+            position: relative;
+        }
+
+        h3::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 20px;
+            background: #e74c3c;
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+            text-indent: 30px;
+            font-size: 1.1em;
+        }
+
+        .quote {
+            background: #ecf0f1;
+            border-left: 5px solid #e74c3c;
+            padding: 20px;
+            margin: 25px 0;
+            font-style: italic;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #f39c12 0%, #f39c12 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.2em;
+            background-position: 0 88%;
+            padding: 2px 0;
+            font-weight: bold;
+        }
+
+        .image-placeholder {
+            width: 300px;
+            height: 400px;
+            background: linear-gradient(45deg, #bdc3c7, #95a5a6);
+            border-radius: 10px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            background: #ecf0f1;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+            position: relative;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .sources {
+            text-align: left;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        .sources h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Benito Musolini</h1>
+            <p class="subtitle">Karakteristike ličnosti i uticaj na Drugi svetski rat</p>
+             <!--<p>Međupredmetni projekat iz istorije, psihologije i primene računara</p> -->
+        </header>
+
+        <div class="nav-tabs">
+            <button class="tab-button active" onclick="showTab('intro')">Uvod</button>
+            <button class="tab-button" onclick="showTab('history')">Istorijski uticaj</button>
+            <button class="tab-button" onclick="showTab('psychology')">Psihološka analiza</button>
+            <button class="tab-button" onclick="showTab('conclusion')">Zaključak</button> 
+        </div>
+
+        <div id="intro" class="tab-content active">
+            <h2>Uvod o Benitu Musoliniju</h2>
+            
+        <img src="musolini.jpg" alt="Benito Musolini (1883-1945)" style="width: 300px; height: 400px; border-radius: 10px; margin: 20px auto; display: block; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); object-fit: cover;">
+
+            <p>Benito Amilkare Andrea Musolini predstavlja jednu od najkontroverznijih figura 20. veka, čiji je uticaj na tok Drugog svetskog rata bio ogroman i dalekosežan. Rođen 29. jula 1883. godine u Predapiu, u severnoj Italiji, Musolini je od skromnog učitelja i socijalističkog novinara postao osnivač fašizma i diktator Italije za period od 1922. do 1943. godine.</p>
+
+            <!-- <p>Ovaj međupredmetni projekat ima za cilj da kroz integraciju istorijskih činjenica i psihološke analize pruži sveobuhvatan pogled na Musolinijevu ličnost i njegov uticaj na najrazorniji konflikt u istoriji čovečanstva. Kombinovanjem pristupa iz različitih naučnih disciplina, nastojimo da razumemo kako je jedan čovek mogao da toliko utiče na tok svetske istorije.</p> -->
+
+            <div class="quote">
+                "Fašizam je religija; dvadesetim vekom treba da vlada naša vera." - Benito Musolini
+            </div>
+
+            <p>Proučavanje Musolinija zahteva interdisciplinarni pristup jer se radi o kompleksnoj ličnosti koja je delovala u izuzetno turbulentnom istorijskom periodu. Njegov uticaj na Drugi svetski rat nije bio samo vojni ili politički - bio je ideološki, psihološki i društveni. Razumevanje njegovih karakteristika ličnosti pomaže nam da objasnimo brojne odluke koje je donosio kao lider Italije i saveznik Adolfa Hitlera.</p>
+
+            <p>Cilj ovog projekta je da kroz analizu <span class="highlight">istorijskih dokumenata i psiholoških teorija</span> razumemo kako je Musolinijeva ličnost oblikovala ne samo sudbinu Italije, već i tok celokupnog Drugog svetskog rata.</p>
+        </div>
+
+        <div id="history" class="tab-content">
+            <h2>Istorijski uticaj Benita Musolinija na Drugi svetski rat</h2>
+
+            <h3>Uspon fašizma u Italiji (1919-1922)</h3>
+            <p>Nakon Prvog svetskog rata, Italija se suočavala sa ozbiljnim ekonomskim i društvenim problemima. Nezadovoljstvo rezultatima rata, ekonomska kriza i strah od komunizma stvorili su pogodnu podlogu za uspon fašizma. Musolini je 1919. godine osnovao Fascio di Combattimento (Borbenički savez), organizaciju koju je kasnije transformisao u Nacionalnu fašističku partiju.</p>
+
+            <p>Ključni trenutak bio je <span class="highlight">"Marš na Rim" u oktobru 1922. godine</span>, kada je Musolini sa svojim pristalicama zapretio preuzimanjem vlasti silom. Kralj Viktor Emanuel III, umesto da naloži vojsci da spreči fašiste, pozvao je Musolinija da formira vladu. Ovaj događaj označio je početak fašističke diktature u Italiji.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">1922-1925</div>
+                    Uspostavljanje diktature - Musolini postupno ukida demokratske institucije i etablira jednopardijski sistem.
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">1935-1936</div>
+                    Invazija na Etiopiju - Prvi veliki test fašističke ideologije ekspanzionizma, uprkos sankcijama Lige naroda.
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">1936-1939</div>
+                    Špansko-italijanska intervencija u Španskom građanskom ratu uz podršku Frankovu režimu.
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">1936</div>
+                    Formiranje Ose Berlin-Rim - savez sa nacističkom Nemačkom.
+                </div>
+            </div>
+
+            <h3>Formiranje Ose i savez sa Hitlerom</h3>
+            <p>Musolinijevo približavanje Adolfu Hitleru predstavlja jedan od ključnih faktora koji su oblikovali tok Drugog svetskog rata. Initially, Musolini je bio skeptičan prema Hitleru, posebno nakon pokušaja anšlusa Austrije 1934. godine. Međutim, međunarodna izolacija nakon invazije na Etiopiju i ideološka bliskost doveli su do formiranja saveza.</p>
+
+            <p><span class="highlight">Pakt čelični (Patto d'Acciaio)</span> potpisan je 22. maja 1939. godine između Italije i Nemačke. Ovaj savez obavezao je obe zemlje na vojnu podršku u slučaju rata. Iako je Musolini inicijalno bio oprezan, verujući da Evropa neće ući u rat pre 1943. godine, našao se vezan obavezama kada je Hitler napao Poljsku u septembru 1939.</p>
+
+            <h3>Italija u Drugom svetskom ratu (1940-1943)</h3>
+            <p>Musolini je proglasio rat Britaniji i Francuskoj 10. juna 1940. godine, kada je već bilo jasno da Nemačka pobeđuje u Francuskoj. Njegova kalkulacija bila je da će se rat brzo završiti i da će Italija dobiti značajan deo ratnog plena uz minimalne napore. Ova odluka pokazala se kao katastrofalna greška.</p>
+
+            <p>Italijanska vojska bila je loše opremljena i pripremljena za veliki rat. Napadi na Grčku (oktobar 1940) i Severni Afrika pokazali su slabosti italijanskih oružanih snaga. <span class="highlight">Poraz u Grčkoj primorao je Nemačku da interveniše na Balkanu</span>, što je odložilo napad na Sovjetski Savez - odluka koja je možda promenila tok celog rata.</p>
+
+            <div class="quote">
+                "Treba nam nekoliko hiljada mrtvih da bismo sedeli za konferencijski sto kao država koja je vodila rat." - Musolini o ulasku Italije u rat
+            </div>
+
+            <h3>Kampanje u Severnoj Africi i na Balkanu</h3>
+            <p>Italijanska vojska u Severnoj Africi, pod komandom maršala Grazijanija, doživela je katastrofalne poraze od britanskih snaga. Nemački Afrika Korps pod Rommelom morao je da spasi italijansku poziciju. Slično tome, italijanska invazija na Grčku u oktobru 1940. završila se potpunim neuspehom, primoravajući Nemačku na operaciju "Marita" na Balkanu.</p>
+
+            <p>Ovi neuspesi pokazali su <span class="highlight">nesposobnost italijanske vojske i Musolinijevo pogrešno procenjivanje vojnih kapaciteta</span> svoje zemlje. Italija je postala više teret nego podrška za Nemačku, što je značajno uticalo na strateška razmatranja nemačkog vrhovnog komandovanja.</p>
+
+            <h3>Pad Musolinija i italijanska kapitulacija</h3>
+            <p>Nakon savezničkog iskrcavanja na Siciliju u julu 1943. godine, Musolinijeva pozicija postala je neodrživa. Veliki savvet fašizma glasao je 24. jula 1943. protiv Musolinija, a kralj Viktor Emanuel III smenio ga je sledećeg dana. Nova vlada maršala Badoglia potpisala je primirje sa saveznicima 8. septembra 1943.</p>
+
+            <p>Pad Musolinija označio je kraj fašističke Italije, ali ne i kraj italijanskog učešća u ratu. <span class="highlight">Nemačka je brzo okupirala severni i centralni deo Italije</span>, a Musolini je, nakon što ga je Hitler oslobodio, osnovao Italijansku socijalnu republiku (Repubblica Sociale Italiana) na severu zemlje.</p>
+
+            <h3>Uticaj na tok Drugog svetskog rata</h3>
+            <p>Musolinijevo učešće u Drugom svetskom ratu imalo je dalekosežne posledice za tok konflikta. Njegovi neuspesi na Balkanu i u Severnoj Africi primorali su Nemačku da rasporedi značajne resurse za podršku saveznika, što je oslabilo nemačke pozicije na drugim frontovima.</p>
+
+            <p>Operacija "Marita" (napad na Grčku i Jugoslaviju) odložila je operaciju "Barbarosa" (napad na SSSR) za šest ključnih nedelja. Mnogi istoričari veruju da je ova odgoda bila jedan od faktora koji su sprečili Nemačku da zauzme Moskvu pre početka zime 1941. godine.</p>
+
+            <p>Italijanska kapitulacija 1943. otvorila je novi front u Evropi, primoravajući Nemačku da drži značajne snage u Italiji umesto da ih koristi na Istočnom frontu ili za odbranu Francuske od očekivanog savezničkog iskrcavanja.</p>
+
+            <div class="quote">
+                "Mussolini je bio Hitlerov najskuplji saveznik." - Winston Churchill
+            </div>
+        </div>
+
+        <div id="psychology" class="tab-content">
+            <h2>Psihološka analiza ličnosti Benita Musolinija</h2>
+
+            <h3>Rana psihološka formacija</h3>
+            <p>Razumevanje Musolinijeve ličnosti zahteva analizu njegovih ranih godina i formativnih iskustava. Rođen je u porodici socijaliste oca Alessandra i katolike majke Rose. Ovaj kontrast između političkih uverenja roditelja možda je doprineo njegovoj kasnijoj sposobnosti da menja ideološke pozicije.</p>
+
+            <p><span class="highlight">Musolini je pokazivao agresivno ponašanje već u detinjstvu</span>. Isključen je iz prve škole zbog napada na drugog učenika nožem. Ovo rano antisocijalno ponašanje može se analizirati kroz teoriju razvojne psihologije kao pokazatelj poremećaja u formiranju empatije i socijalnih veština.</p>
+
+            <p>Prema psihološkoj teoriji Erika Eriksona o stadijumima psihosocijalnog razvoja, Musolini je verovatno doživeo krizu identiteta tokom adolescencije, što se manifestovalo kroz česte promene političkih uverenja - od socijalizma do ultrakonzervativizma i konačno fašizma.</p>
+
+            <h3>Narcisoidna ličnost i potreba za admiracijom</h3>
+            <p>Jedna od najupečatljivijih karakteristika Musolinijeve ličnosti bila je izražen narcizam. Prema DSM-5 klasifikaciji, narcisoidni poremećaj ličnosti karakterišu grandioznost, potreba za admiracijom i nedostatak empatije - sve karakteristike koje je Musolini jasno demonstrirao.</p>
+
+            <p>Musolini je konstantno tražio pažnju i divljenje masa. Njegovi javni nastupi bili su pažljivo izhoreografirani spektakli dizajnirani da projektuju sliku snage i nepogrešivosti. <span class="highlight">Kultivacija kulta ličnosti</span> bila je centralna za njegovu vladavinu, što je tipično za narcisoidne lidere.</p>
+
+            <div class="quote">
+                "Musolini je uvek bio akter, a Italija je bila njegova pozornica." - analiza italijanskog istoričara Renza De Felice
+            </div>
+
+            <h3>Autoritarna ličnost i potreba za kontrolom</h3>
+            <p>Theodor Adorno i njegova grupa istraživača opisali su "autoritarnu ličnost" kao specifičan tip karaktera sklon fašizmu. Musolini je predstavljao klasičan primer ovakve ličnosti, sa izraženom potrebom da dominira i kontroliše druge.</p>
+
+            <p>Njegova vladavina karakterisala se mikromenadžmentom i potrebom da se lično umeša u sve aspekte državne uprave. Ova opsesija kontrolom možda je kompenzovala dublje nesigurnosti i strahove od gubitka moći.</p>
+
+            <p>Psihološka analiza pokazuje da je Musolini demonstrirao <span class="highlight">rigidno crno-belo mišljenje</span>, karakteristično za autoritarne ličnosti. Svet je bio podeljen na prijatelje i neprijatelje, bez nijansi ili kompromisa.</p>
+
+            <h3>Paranoidne tendencije i teorije zavere</h3>
+            <p>Tokom svojih poslednjih godina na vlasti, Musolini je pokazivao sve izraženije paranoidne tendencije. Konstantno je sumnjao u lojalnost svojih saradnika i video je zavere svugde oko sebe. Ovo je tipična progresija kod autoritarnih lidera koji se suočavaju sa rastućim pritiskom.</p>
+
+            <p>Njegovi dnevnici iz tog perioda otkrivaju čoveka opsednutog kontrolom informacija i strahom od izdaje. Ova paranoja je verovatno doprinela njegovom loših strategijskim odlukama tokom rata.</p>
+
+            <h3>Megalomanija i grandiozni planovi</h3>
+            <p>Musolinijevi planovi za obnovu Rimskog carstva predstavljaju klasičan primer megalomanske ličnosti. Njegova vizija "Marenostruma" (Mediterana kao "našeg mora") bila je potpuno nerealna s obzirom na italijanske resurse i mogućnosti.</p>
+
+            <p><span class="highlight">Grandiozni self-koncept</span> sprečavao ga je da realno proceni ograničenja Italije kao vojne sile. Ova odstupanja od realnosti tipična su za narcisoidno-megalomanske ličnosti koje žive u svom konstruisanom svetu veličine.</p>
+
+            <h3>Impulsivnost i loše donošenje odluka</h3>
+            <p>Psihološka analiza Musolinijevih vojnih i političkih odluka otkriva obrazac impulsivnog ponašanja bez temeljne analize posledica. Odluka da napadne Grčku bez konsultovanja sa Nemačkom bila je tipična za njegovu impulzivnu prirodu.</p>
+
+            <p>Ova impulsivnost može se objasniti kroz teoriju egzekutivnih funkcija u neuropsihologiji. Musolini je pokazivao slabosti u planiranju, proceni rizika i inhibiciji neprimerenih odgovora - sve funkcije povezane sa prefrontalnim korteksom.</p>
+
+            <h3>Manipulativnost i harizmatsko vođstvo</h3>
+            <p>Uprkos svojim manama, Musolini je bio veoma vešt manipulator masa. Koristio je tehnike persuazije koje danas prepoznajemo kao delove socijalne psihologije: ponavljanje poruka, emocionalne apele, i stvaranje zajedničkog neprijatelja.</p>
+
+            <p>Njegova harizma nije bila lična koliko se oslanjala na simbole, rituale i spektakularne javne skupove. <span class="highlight">Koristio je arhitektonske i vizuelne efekte</span> da bi stvorio iluziju moći i veličine, što je karakteristično za narcisoidne lidere.</p>
+
+            <h3>Psihološka analiza kroz teoriju privržavanja</h3>
+            <p>John Bowlby's teorija privržavanja može objasniti neke aspekte Musolinijevog ponašanja. Njegova potreba za stalnim potvrđivanjem i strah od napuštavanja mogu ukazivati na nesigurno privržavanje formirано u ranom detinjstvu.</p>
+
+            <p>Ova nesigurnost manifestovala se kroz konstantnu potrebu da bude u centru pažnje i da kontroliše sve oko sebe. Paradoksalno, his pokušaji kontrole često su stvarali upravo ono čega se najviše plašio - izolaciju i odbacivanje.</p>
+
+            <div class="quote">
+                "Iza maske diktatorove moći krila se duboko nesigurna ličnost koja je stalno tražila potvrdu i priznanje." - psiholog Roberto Volpi
+            </div>
+
+            <h3>Kognitivne distorzije i samozavaravanje</h3>
+            <p>Musolini je demonstrirao brojne kognitivne distorzije koje su uticale na njegovo donošenje odluka. Konfirmaciona pristrasnot (tendencija da se traže informacije koje potvrđuju postojeća uverenja) bila je posebno izražena.</p>
+
+            <p>Takođe je pokazivao <span class="highlight">Dunning-Kruger efekat</span> - precenjivanje svojih sposobnosti u oblastima gde je imao ograničeno znanje, posebno u vojnoj strategiji. Ova kombinacija samouverenosti i neznanja dovela je do katastrofalnih odluka tokom rata.</p>
+        </div>
+
+        <div id="conclusion" class="tab-content">
+            <h2>Zaključak - Integracija istorijskih i psiholoških perspektiva</h2>
+
+            <h3>Sinergija istorijskih okolnosti i psiholoških karakteristika</h3>
+            <p>Analiza Benita Musolinija kroz inter-disciplinarne objektive istorije i psihologije otkriva kako se kompleksne ličnosne karakteristike kombinuju sa specifičnim istorijskim okolnostima da bi proizvele dalekosežne posledice. Musolinijeva narcisoidna ličnost, autoritarne tendencije i megalomanski planovi našli su pogodnu podlogu u post-ratnoj Italiji.</p>
+
+            <p><span class="highlight">Kriza identiteta italijanske nacije nakon Prvog svetskog rata</span> odgovarala je Musolinijev ličnoj krizi identiteta i potrebi za grandioznim projektima. Njegova psihološka potreba za kontrolom i admiracijom poklapala se sa društvenom potrebom za jakim vođstvom i nacionalnim ponosom.</p>
+
+            <h3>Uticaj ličnosti na istorijske događaje</h3>
+            <p>Ovaj projekat demonstrira kako individualne psihološke karakteristike mogu imati ogromne istorijske posledice. Musolinijeva impulsivnost dovela je do katastrofalnih vojno-strateških odluka koje su promenile tok Drugog svetskog rata. Njegov narcizam sprečio ga je da realno proceni mogućnosti Italije i doveo je do saveza sa Nemačkom koji se pokazao pogubnim.</p>
+
+            <p>Paranoidne tendencije i rigidno mišljenje ograničili su njegovu sposobnost da se prilagodi menjajućim okolnostima rata. Umesto da prizna greške i promeni kurs, Musolini je nastavio sa nerealizujnim planovima sve dok nije bio prinuđen da podnese ostavku.</p>
+
+            <div class="quote">
+                "Istorija ne pravi lidere, već lideri prave istoriju kroz svoje psihološke karakteristike i odluke koje donose." - zaključak interdisciplinarne analize
+            </div>
+
+            <h3>Pouke za razumevanje autoritarnih lidera</h3>
+            <p>Studija Musolinijeve ličnosti pruža važne uvide u funkcionisanje autoritarnih lidera generalno. Kombinacija narcisoidnih karakteristika, paranoidnih tendencija i potrebe za kontrolom čini tipičan profil diktatorskih ličnosti kroz istoriju.</p>
+
+            <p>Posebno je važna <span class="highlight">uloga harizma i manipulacije masa</span> u uspostavljanju i održavanju autoritarne vlasti. Musolini je pokazao kako se psihološke tehnike mogu koristiti za mobilizaciju narodnih masa čak i za iracionalne i štetne ciljeve.</p>
+
+            <h3>Metodološki pristup interdisciplinarnom istraživanju</h3>
+            <p>Ovaj projekat demonstrira vrednost interdisciplinarnog pristupa u proučavanju istorijskih ličnosti. Samo istorijska analiza ne bi mogla objasniti iracionalnost mnogih Musolinijevih odluka, dok bi čisto psihološka analiza zanemarila istorijski kontekst koji je omogućio njegov uspon.</p>
+
+            <p>Kombinovanje različitih naučnih perspektiva omogućava nam da bolje razumemo kompleksne uzročno-posledične veze između individualnih karakteristika i društvenih procesa.</p>
+
+            <h3>Savremene implikacije</h3>
+            <p>Razumevanje psiholoških karakteristika autoritarnih lidera poput Musolinija ima važne implikacije za savremeno društvo. Prepoznavanje obrazaca narcisoidnog ponašanja, megalomanskih tendencija i manipulativnih tehnika može pomoći u ranom identifikovanju potencijalno opasnih političkih lidera.</p>
+
+            <p><span class="highlight">Demokratska društva moraju razviti "psihološki imunitet"</span> protiv autoritarnih apela kroz obrazovanje, kritičko mišljenje i jačanje demokratskih institucija koje mogu ograničiti moć pojedinaca sa problematičnim ličnosnim karakteristikama.</p>
+
+            <h3>Konačne refleksije</h3>
+            <p>Benito Musolini predstavlja tragičan primer kako pojedinačne psihološke karakteristike mogu imati katastrofalne posledice za milione ljudi. Njegova priča opominje nas na opasnosti koje predstavljaju lideri sa narcisoidnim poremećajima ličnosti kada dobijaju pristup političkoj moći.</p>
+
+            <p>Kroz integraciju istorijskih činjenica i psihološke analize, vidimo da Musolinijeva ličnost nije bila samo produkt njegovog vremena, već je aktivno oblikovala tok istorijskih događaja. Njegova nesposobnost da realno proceni situaciju, kombinovana sa grandioznim planovima i autoritarnim tendencijama, dovela je do katastrofe ne samo za Italiju, već za celu Evropu.</p>
+
+            <p>Ovaj međupredmetni pristup omogućava nam da dublje razumemo veze između psihologije, politike i istorije. Pokazuje da se istorijski eventi ne mogu potpuno objasniti samo kroz ekonomske ili geopolitičke faktore - psihološki faktori kod lidera igraju ključnu ulogu u oblikovanju toka događaja.</p>
+        </div>
+
+        <footer>
+            <h4>O projektu</h4>
+            
+            <div class="sources">
+                <h4>Korišćeni izvori i literatura:</h4>
+                <ul>
+                    <li><strong>Istorija:</strong></li>
+                    <li>Bosworth, R.J.B. "Mussolini's Italy: Life Under the Fascist Dictatorship"</li>
+                    <li>Knox, MacGregor. "Mussolini Unleashed 1939-1941: Politics and Strategy"</li>
+                    <li>Kershaw, Ian. "Fateful Choices: Ten Decisions That Changed the World"</li>
+                    <li>De Felice, Renzo. "Mussolini il Duce" (višetomno delo)</li>
+                    <li>Mack Smith, Denis. "Mussolini: A Biography"</li>
+                </ul>
+                <ul>
+                    <li><strong>Psihologija:</strong></li>
+                    <li>American Psychiatric Association. "DSM-5: Diagnostic and Statistical Manual"</li>
+                    <li>Adorno, T.W. "The Authoritarian Personality"</li>
+                    <li>Fromm, Erich. "Escape from Freedom"</li>
+                    <li>Post, Jerrold M. "Political Paranoia: The Psychopolitics of Hatred"</li>
+                    <li>Robins, Robert S. "Political Paranoia: The Psychopolitics of Hatred"</li>
+                    <li>Volkan, Vamik D. "Blind Trust: Large Groups and Their Leaders"</li>
+                </ul>
+                <ul>
+                    <li><strong>Interdisciplinarni pristupi:</strong></li>
+                    <li>Glad, Betty. "Psychological Dimensions of War"</li>
+                    <li>Hermann, Margaret G. "Leaders, Groups and Coalitions"</li>
+                    <li>Winter, David G. "The Psychological Assessment of Political Leaders"</li>
+                </ul>
+            </div>
+            
+            <p style="margin-top: 20px; font-style: italic;">
+                Međupredmetni projekat iz istorije, psihologije i primene računara<br>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Sakrij sve tab-ove
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Ukloni active klasu sa svih dugmića
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Prikaži odabrani tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Dodaj active klasu na odgovarajuće dugme
+            event.target.classList.add('active');
+        }
+
+        // Dodaj smooth scrolling efekat
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            for (const link of links) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            }
+        });
+
+        // Dodaj hover efekte za interaktivnost
+        document.addEventListener('DOMContentLoaded', function() {
+            const highlights = document.querySelectorAll('.highlight');
+            highlights.forEach(highlight => {
+                highlight.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.02)';
+                    this.style.transition = 'transform 0.2s ease';
+                });
+                
+                highlight.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
